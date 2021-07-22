@@ -11,6 +11,13 @@ import Themes from "./Themes/Themes.jsx";
 function App() {
   const [themes, setThemes] = useState("dark");
 
+  const clickHandlerDark = () => {
+    setThemes("dark");
+  };
+  const clickHandlerFrench = () => {
+    setThemes("french");
+  };
+
   return (
     <div className={themes}>
       <AppBar position="static">
@@ -39,7 +46,10 @@ function App() {
         <SubText>to my site</SubText>
       </CenterView>
       <BottomView>
-        <Themes />
+        <Themes
+          clickHandlerDark={clickHandlerDark}
+          clickHandlerFrench={clickHandlerFrench}
+        />
       </BottomView>
     </div>
   );

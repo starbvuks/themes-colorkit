@@ -3,18 +3,18 @@ import {Card, CardContent, ButtonBase} from "@material-ui/core";
 
 import styled from "styled-components";
 
-function Themes() {
+function Themes(props) {
   return (
     <Main>
       <CardStyled variant="outlined">
-        <ButtonBase>
+        <ButtonBase onClick={() => props.clickHandlerDark()}>
           <CardContentStyled>
             <Theme>Dark</Theme>
           </CardContentStyled>
         </ButtonBase>
       </CardStyled>
       <CardStyled variant="outlined">
-        <ButtonBase>
+        <ButtonBase onClick={() => props.clickHandlerFrench()}>
           <CardContentStyled>
             <Theme>French</Theme>
           </CardContentStyled>
