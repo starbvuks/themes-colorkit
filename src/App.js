@@ -42,7 +42,7 @@ function App() {
       <CenterView>
         <CenterText>
           <Welcome>Welcome</Welcome>
-          <SubText>to my theme kit</SubText>
+          <SubText className="typewriter">to my theme kit</SubText>
         </CenterText>
         {/* <LogoBackdrop>
           <CenterLogo src={strbks} alt="logo" />
@@ -99,12 +99,15 @@ const Welcome = styled.h1`
   margin: 0;
 `;
 
-const SubText = styled.span`
+const SubText = styled.p`
+  border-right: solid 3px var(--type);
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 50px;
   margin: 0 0 0 15px;
   color: var(--type);
+  white-space: nowrap;
+  overflow: hidden;
 `;
 const CenterLogo = styled.img`
   width: 100%;

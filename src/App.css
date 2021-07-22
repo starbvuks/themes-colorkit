@@ -20,6 +20,11 @@ div {
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .dark {
   --bg-nav: var(--gray3);
   --bg: linear-gradient(to bottom, var(--gray3), var(--gray2));
@@ -38,4 +43,31 @@ div {
   --backdrop: var(--french2);
   --shadow: #d3e6e0 5px 5px, #c6d8d3 10px 10px, #b0bfbb 15px 15px,
     #3c6473 20px 20px;
+}
+
+/* Animation */
+.typewriter {
+  animation: animated-text 3s steps(24, end) 500ms 1 normal both,
+    animated-cursor 600ms steps(24, end) infinite;
+}
+/* text animation */
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 445px;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: var(--type);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
