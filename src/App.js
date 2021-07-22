@@ -1,46 +1,48 @@
+import React, {useState} from "react";
 import "./App.css";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Button,
-  Avatar,
-} from "@material-ui/core";
+import {AppBar, Toolbar, IconButton, Button, Avatar} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import styled from "styled-components";
 
 import logo from "./img/ratio-rocket-logo.png";
 
+import Themes from "./Themes/Themes.jsx";
+
 function App() {
+  const [themes, setThemes] = useState("french");
+
   return (
-    <div className="french">
-      <AppBar position="static">
-        <ToolbarStyled>
-          <RightDiv>
-            <IconButton
-              edge="start"
-              className="menuButton"
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Avatar alt="Logo" src={logo} />
-          </RightDiv>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Theme</Button>
-          <Button color="inherit">Login</Button>
-        </ToolbarStyled>
-      </AppBar>
-      <CenterView>
-        <Welcome>Welcome</Welcome>
-        <CenterLogo src={logo} alt="logo" />
-        <LogoBackdrop></LogoBackdrop>
-        <SubText>to my site</SubText>
-      </CenterView>
-      <BottomView></BottomView>
+    <div id="main-div">
+      <div className={themes}>
+        <AppBar position="static">
+          <ToolbarStyled>
+            <RightDiv>
+              <IconButton
+                edge="start"
+                className="menuButton"
+                color="inherit"
+                aria-label="menu"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Avatar alt="Logo" src={logo} />
+            </RightDiv>
+            <ButtonStyled>Home</ButtonStyled>
+            <ButtonStyled>About</ButtonStyled>
+            <ButtonStyled>Theme</ButtonStyled>
+            <ButtonStyled>Login</ButtonStyled>
+          </ToolbarStyled>
+        </AppBar>
+        <CenterView>
+          <Welcome>Welcome</Welcome>
+          <CenterLogo src={logo} alt="logo" />
+          <LogoBackdrop></LogoBackdrop>
+          <SubText>to my site</SubText>
+        </CenterView>
+        <BottomView>
+          <Themes />
+        </BottomView>
+      </div>
     </div>
   );
 }
@@ -51,6 +53,11 @@ const ToolbarStyled = styled(Toolbar)`
   display: flex;
   justify-content: space-between;
   background-color: var(--bg-nav);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+`;
+
+const ButtonStyled = styled(Button)`
+  color: var(--backdrop);
 `;
 
 const RightDiv = styled.div`
