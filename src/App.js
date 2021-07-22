@@ -40,11 +40,13 @@ function App() {
         </ToolbarStyled>
       </AppBar>
       <CenterView>
-        <Welcome>Welcome</Welcome>
-        <LogoBackdrop>
+        <CenterText>
+          <Welcome>Welcome</Welcome>
+          <SubText>to my theme kit</SubText>
+        </CenterText>
+        {/* <LogoBackdrop>
           <CenterLogo src={strbks} alt="logo" />
-        </LogoBackdrop>
-        <SubText>to my site</SubText>
+        </LogoBackdrop> */}
       </CenterView>
       <BottomView>
         {themeNames.map((theme, index) => (
@@ -81,16 +83,29 @@ const CenterView = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   z-index: -2;
 `;
 
+const CenterText = styled.div`
+  padding: 50px;
+`;
+
 const Welcome = styled.h1`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   color: var(--type);
-  font-size: 80px;
+  font-size: 120px;
   margin: 0;
 `;
 
+const SubText = styled.span`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 0 0 0 15px;
+  color: var(--type);
+`;
 const CenterLogo = styled.img`
   width: 100%;
   height: 100%;
@@ -107,13 +122,6 @@ const LogoBackdrop = styled.div`
   width: 225px;
   height: 225px;
   z-index: 1;
-`;
-
-const SubText = styled.span`
-  font-size: 40px;
-  font-weight: bold;
-  margin: 20px 0 0 0;
-  color: var(--type);
 `;
 
 const BottomView = styled.div`
