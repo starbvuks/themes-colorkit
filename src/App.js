@@ -9,40 +9,38 @@ import logo from "./img/ratio-rocket-logo.png";
 import Themes from "./Themes/Themes.jsx";
 
 function App() {
-  const [themes, setThemes] = useState("french");
+  const [themes, setThemes] = useState("dark");
 
   return (
-    <div id="main-div">
-      <div className={themes}>
-        <AppBar position="static">
-          <ToolbarStyled>
-            <RightDiv>
-              <IconButton
-                edge="start"
-                className="menuButton"
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Avatar alt="Logo" src={logo} />
-            </RightDiv>
-            <ButtonStyled>Home</ButtonStyled>
-            <ButtonStyled>About</ButtonStyled>
-            <ButtonStyled>Theme</ButtonStyled>
-            <ButtonStyled>Login</ButtonStyled>
-          </ToolbarStyled>
-        </AppBar>
-        <CenterView>
-          <Welcome>Welcome</Welcome>
-          <CenterLogo src={logo} alt="logo" />
-          <LogoBackdrop></LogoBackdrop>
-          <SubText>to my site</SubText>
-        </CenterView>
-        <BottomView>
-          <Themes />
-        </BottomView>
-      </div>
+    <div className={themes}>
+      <AppBar position="static">
+        <ToolbarStyled>
+          <RightDiv>
+            <IconButton
+              edge="start"
+              className="menuButton"
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Avatar alt="Logo" src={logo} />
+          </RightDiv>
+          <ButtonStyled>Home</ButtonStyled>
+          <ButtonStyled>About</ButtonStyled>
+          <ButtonStyled>Theme</ButtonStyled>
+          <ButtonStyled>Login</ButtonStyled>
+        </ToolbarStyled>
+      </AppBar>
+      <CenterView>
+        <Welcome>Welcome</Welcome>
+        <CenterLogo src={logo} alt="logo" />
+        <LogoBackdrop></LogoBackdrop>
+        <SubText>to my site</SubText>
+      </CenterView>
+      <BottomView>
+        <Themes />
+      </BottomView>
     </div>
   );
 }

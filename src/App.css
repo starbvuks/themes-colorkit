@@ -14,8 +14,7 @@
   --french4: #c6d8d3;
 }
 
-#main-div {
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+div {
 }
 
 .dark {
