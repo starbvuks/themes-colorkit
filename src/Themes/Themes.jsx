@@ -6,20 +6,13 @@ import styled from "styled-components";
 function Themes(props) {
   return (
     <Main>
-      <CardStyled variant="outlined">
-        <ButtonBase onClick={() => props.clickHandlerDark()}>
+      <ButtonBase onClick={() => props.clickHandler(props.theme)}>
+        <CardStyled variant="outlined">
           <CardContentStyled>
-            <Theme>Dark</Theme>
+            <Theme>{props.theme}</Theme>
           </CardContentStyled>
-        </ButtonBase>
-      </CardStyled>
-      <CardStyled variant="outlined">
-        <ButtonBase onClick={() => props.clickHandlerFrench()}>
-          <CardContentStyled>
-            <Theme>French</Theme>
-          </CardContentStyled>
-        </ButtonBase>
-      </CardStyled>
+        </CardStyled>
+      </ButtonBase>
     </Main>
   );
 }
@@ -28,12 +21,10 @@ export default Themes;
 
 const Main = styled.div`
   padding: 50px;
-  display: flex;
+  display: inline-flex;
 `;
 
 const CardStyled = styled(Card)`
-  width: 12%;
-  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -5,18 +5,19 @@ import MenuIcon from "@material-ui/icons/Menu";
 import styled from "styled-components";
 
 import logo from "./img/ratio-rocket-logo.png";
+import strbks from "./img/strbks.png";
+import ballGif from "./img/reflect-ball.gif";
 
 import Themes from "./Themes/Themes.jsx";
 
 function App() {
   const [themes, setThemes] = useState("dark");
 
-  const clickHandlerDark = () => {
-    setThemes("dark");
+  const clickHandler = (theme) => {
+    setThemes(theme);
   };
-  const clickHandlerFrench = () => {
-    setThemes("french");
-  };
+
+  const themeNames = ["dark", "french"];
 
   return (
     <div className={themes}>
@@ -26,12 +27,11 @@ function App() {
             <IconButton
               edge="start"
               className="menuButton"
-              color="inherit"
               aria-label="menu"
+              style={{color: "var(--backdrop)"}}
             >
               <MenuIcon />
             </IconButton>
-            <Avatar alt="Logo" src={logo} />
           </RightDiv>
           <ButtonStyled>Home</ButtonStyled>
           <ButtonStyled>About</ButtonStyled>
@@ -41,15 +41,15 @@ function App() {
       </AppBar>
       <CenterView>
         <Welcome>Welcome</Welcome>
-        <CenterLogo src={logo} alt="logo" />
-        <LogoBackdrop></LogoBackdrop>
+        <LogoBackdrop>
+          <CenterLogo src={strbks} alt="logo" />
+        </LogoBackdrop>
         <SubText>to my site</SubText>
       </CenterView>
       <BottomView>
-        <Themes
-          clickHandlerDark={clickHandlerDark}
-          clickHandlerFrench={clickHandlerFrench}
-        />
+        {themeNames.map((theme, index) => (
+          <Themes key={index} theme={theme} clickHandler={clickHandler} />
+        ))}
       </BottomView>
     </div>
   );
@@ -92,15 +92,17 @@ const Welcome = styled.h1`
 `;
 
 const CenterLogo = styled.img`
-  width: 15%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 2;
+  border-radius: 50%;
 `;
 
 const LogoBackdrop = styled.div`
+  position: relative;
+  display: flex;
   background-color: var(--backdrop);
-  position: absolute;
-  margin: 110px 0 0 0;
+  margin: 10px 0 0 0;
   border-radius: 50%;
   width: 225px;
   height: 225px;
@@ -110,7 +112,7 @@ const LogoBackdrop = styled.div`
 const SubText = styled.span`
   font-size: 40px;
   font-weight: bold;
-  padding: 15px;
+  margin: 20px 0 0 0;
   color: var(--type);
 `;
 
