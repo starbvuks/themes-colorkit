@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+:root {
+  --white: #ffff;
+  --whitesmoke: #f2f2f2;
+  --gray0: #e5e5e5;
+  --gray1: #b2becd;
+  --gray2: #333333;
+  --gray3: #212121;
+  --gray4: #e2e8ce;
+  --gray5: #acbfa4;
+  --french0: #3a3335;
+  --french1: #d81e5b;
+  --french2: #f0544f;
+  --french3: #fdf0d5;
+  --french4: #c6d8d3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div {
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dark {
+  --bg-nav: var(--gray3);
+  --bg: linear-gradient(to bottom, var(--gray3), var(--gray2));
+  --bg-bot: var(--gray2);
+  --type: var(--gray4);
+  --backdrop: var(--gray5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.french {
+  --bg-nav: var(--french4);
+  --bg: linear-gradient(to bottom, var(--french4), var(--french3));
+  --bg-bot: var(--french3);
+  --type: var(--french2);
+  --backdrop: var(--french1);
 }
