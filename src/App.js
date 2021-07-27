@@ -35,10 +35,7 @@ function App() {
                 <Avatar src={strbks} alt="logo" />
               </IconButton>
             </RightDiv>
-            <ButtonStyled>Home</ButtonStyled>
-            <ButtonStyled>About</ButtonStyled>
-            <ButtonStyled>Theme</ButtonStyled>
-            <ButtonStyled>Login</ButtonStyled>
+            <ButtonStyled>Themes</ButtonStyled>
           </ToolbarStyled>
         </AppBar>
         <CenterView>
@@ -89,34 +86,48 @@ const RightDiv = styled.div`
 const CenterView = styled.div`
   background-color: var(--bg-nav);
   color: white;
-  height: 450px;
+  height: 60vh;
   width: 100%;
   display: flex;
   align-items: space-between;
+  overflow: hidden;
   z-index: -2;
 `;
 
 const CenterText = styled.div`
-  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 425px) {
+  }
 `;
 
-const Welcome = styled.h1`
+const Welcome = styled.span`
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: var(--type);
-  font-size: 120px;
-  margin: 0;
+  font-size: 10vw;
+  @media only screen and (max-width: 426px) {
+    font-size: 15vw;
+  }
 `;
 
 const SubText = styled.p`
   border-right: solid 3px var(--type);
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 50px;
   margin: 0 0 0 15px;
   color: var(--type);
   white-space: nowrap;
   overflow: hidden;
+  font-size: 3.2vw;
+  @media only screen and (max-width: 426px) {
+    font-size: 5vw;
+  }
 `;
 
 const PatternGroup = styled.div`
@@ -126,6 +137,8 @@ const PatternGroup = styled.div`
 const BottomView = styled.div`
   background-color: var(--bg-bot);
   color: white;
-  height: 450px;
+  height: 80vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;

@@ -20,8 +20,13 @@ function Themes(props) {
 export default Themes;
 
 const Main = styled.div`
-  padding: 50px;
-  display: inline-flex;
+  padding: 75px 50px 0 50px;
+
+  @media only screen and (max-width: 426px) {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
 `;
 
 const CardStyled = styled(Card)`
@@ -29,10 +34,14 @@ const CardStyled = styled(Card)`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  margin-right: 10%;
   border: none;
   background-color: var(--bg-nav) !important;
   box-shadow: var(--shadow);
+
+  @media only screen and (max-width: 734px) {
+    font-size: 3vw;
+    margin-right: 0;
+  }
 `;
 
 const CardContentStyled = styled(CardContent)``;
@@ -42,4 +51,8 @@ const Theme = styled.span`
   font-weight: bold;
   color: var(--nav-text);
   padding: 10px;
+
+  @media only screen and (max-width: 734px) {
+    font-size: 5vw;
+  }
 `;
