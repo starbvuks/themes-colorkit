@@ -120,6 +120,6 @@ const PatternGroup = styled.div`
 const BottomView = styled.div`
   background-color: var(--bg-bot);
   color: white;
-  height: 250px;
+  height: 450px;
   width: 100%;
 `;
