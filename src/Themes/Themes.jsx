@@ -43,7 +43,7 @@ const CardStyled = styled(Card)`
   justify-content: center;
   border-radius: 10px;
   margin-right: 10%;
-  border: none;
+  border: none !important;
   background-color: var(--bg-nav) !important;
   box-shadow: var(--shadow);
 
