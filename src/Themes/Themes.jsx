@@ -40,6 +40,6 @@ const CardContentStyled = styled(CardContent)``;
 const Theme = styled.span`
   font-size: 32px;
   font-weight: bold;
-  color: var(--backdrop);
+  color: var(--nav-text);
   padding: 10px;
 `;

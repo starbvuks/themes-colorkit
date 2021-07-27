@@ -4,11 +4,12 @@ import {AppBar, Toolbar, IconButton, Button, Avatar} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import styled from "styled-components";
 
-import logo from "./img/ratio-rocket-logo.png";
+// import logo from "./img/ratio-rocket-logo.png";
 import strbks from "./img/strbks.png";
-import ballGif from "./img/reflect-ball.gif";
+// import ballGif from "./img/reflect-ball.gif";
 
 import Themes from "./Themes/Themes.jsx";
+import Pattern from "./Themes/Pattern.jsx";
 
 function App() {
   const [themes, setThemes] = useState("dark");
@@ -17,7 +18,7 @@ function App() {
     setThemes(theme);
   };
 
-  const themeNames = ["dark", "french"];
+  const themeNames = ["dark", "french", "thirties"];
 
   return (
     <div className={themes}>
@@ -28,9 +29,9 @@ function App() {
               edge="start"
               className="menuButton"
               aria-label="menu"
-              style={{color: "var(--backdrop)"}}
+              style={{color: "var(--nav-text)"}}
             >
-              <MenuIcon />
+              <Avatar src={strbks} alt="logo" />
             </IconButton>
           </RightDiv>
           <ButtonStyled>Home</ButtonStyled>
@@ -44,6 +45,9 @@ function App() {
           <Welcome>Welcome</Welcome>
           <SubText className="typewriter">to my theme kit</SubText>
         </CenterText>
+        {/* <PatternGroup>
+          <Pattern />
+        </PatternGroup> */}
         {/* <LogoBackdrop>
           <CenterLogo src={strbks} alt="logo" />
         </LogoBackdrop> */}
@@ -67,7 +71,7 @@ const ToolbarStyled = styled(Toolbar)`
 `;
 
 const ButtonStyled = styled(Button)`
-  color: var(--backdrop);
+  color: var(--nav-text);
 `;
 
 const RightDiv = styled.div`
@@ -82,8 +86,7 @@ const CenterView = styled.div`
   height: 450px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: space-between;
   z-index: -2;
 `;
 
@@ -109,6 +112,11 @@ const SubText = styled.p`
   white-space: nowrap;
   overflow: hidden;
 `;
+
+const PatternGroup = styled.div`
+  position: relative;
+`;
+
 const CenterLogo = styled.img`
   width: 100%;
   height: 100%;
