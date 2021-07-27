@@ -20,12 +20,20 @@ function Themes(props) {
 export default Themes;
 
 const Main = styled.div`
-  padding: 75px 50px 0 50px;
+  padding: 75px;
 
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 556px) {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    padding: 40px;
+    padding: 60px;
+  }
+  @media only screen and (min-width: 556px) and (max-width: 885px) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 8vw 5vw 0 5vw;
   }
 `;
 
@@ -34,6 +42,7 @@ const CardStyled = styled(Card)`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-right: 10%;
   border: none;
   background-color: var(--bg-nav) !important;
   box-shadow: var(--shadow);

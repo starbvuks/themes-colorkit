@@ -63,6 +63,7 @@ function App() {
 export default App;
 
 const Main = styled.div`
+  width: 100%;
   height: 100%;
 `;
 
@@ -101,9 +102,6 @@ const CenterText = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
-  @media only screen and (max-width: 425px) {
-  }
 `;
 
 const Welcome = styled.span`
@@ -111,6 +109,7 @@ const Welcome = styled.span`
   font-weight: 700;
   color: var(--type);
   font-size: 10vw;
+
   @media only screen and (max-width: 426px) {
     font-size: 15vw;
   }
@@ -125,6 +124,7 @@ const SubText = styled.p`
   white-space: nowrap;
   overflow: hidden;
   font-size: 3.2vw;
+
   @media only screen and (max-width: 426px) {
     font-size: 5vw;
   }
@@ -140,5 +140,13 @@ const BottomView = styled.div`
   height: 80vh;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  @media only screen and (max-width: 556px) {
+    height: 90vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
