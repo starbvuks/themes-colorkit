@@ -31,7 +31,7 @@ const CardStyled = styled(Card)`
   border-radius: 10px;
   margin-right: 10%;
   border: none;
-  background-color: var(--bg-nav);
+  background-color: var(--bg-nav) !important;
   box-shadow: var(--shadow);
 `;
 

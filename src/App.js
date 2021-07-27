@@ -21,47 +21,53 @@ function App() {
   const themeNames = ["dark", "french", "thirties"];
 
   return (
-    <div className={themes}>
-      <AppBar position="static">
-        <ToolbarStyled>
-          <RightDiv>
-            <IconButton
-              edge="start"
-              className="menuButton"
-              aria-label="menu"
-              style={{color: "var(--nav-text)"}}
-            >
-              <Avatar src={strbks} alt="logo" />
-            </IconButton>
-          </RightDiv>
-          <ButtonStyled>Home</ButtonStyled>
-          <ButtonStyled>About</ButtonStyled>
-          <ButtonStyled>Theme</ButtonStyled>
-          <ButtonStyled>Login</ButtonStyled>
-        </ToolbarStyled>
-      </AppBar>
-      <CenterView>
-        <CenterText>
-          <Welcome>Welcome</Welcome>
-          <SubText className="typewriter">to my theme kit</SubText>
-        </CenterText>
-        {/* <PatternGroup>
+    <Main>
+      <div className={themes}>
+        <AppBar position="static">
+          <ToolbarStyled>
+            <RightDiv>
+              <IconButton
+                edge="start"
+                className="menuButton"
+                aria-label="menu"
+                style={{color: "var(--nav-text)"}}
+              >
+                <Avatar src={strbks} alt="logo" />
+              </IconButton>
+            </RightDiv>
+            <ButtonStyled>Home</ButtonStyled>
+            <ButtonStyled>About</ButtonStyled>
+            <ButtonStyled>Theme</ButtonStyled>
+            <ButtonStyled>Login</ButtonStyled>
+          </ToolbarStyled>
+        </AppBar>
+        <CenterView>
+          <CenterText>
+            <Welcome>Welcome</Welcome>
+            <SubText className="typewriter">to my theme kit</SubText>
+          </CenterText>
+          {/* <PatternGroup>
           <Pattern />
         </PatternGroup> */}
-        {/* <LogoBackdrop>
+          {/* <LogoBackdrop>
           <CenterLogo src={strbks} alt="logo" />
         </LogoBackdrop> */}
-      </CenterView>
-      <BottomView>
-        {themeNames.map((theme, index) => (
-          <Themes key={index} theme={theme} clickHandler={clickHandler} />
-        ))}
-      </BottomView>
-    </div>
+        </CenterView>
+        <BottomView>
+          {themeNames.map((theme, index) => (
+            <Themes key={index} theme={theme} clickHandler={clickHandler} />
+          ))}
+        </BottomView>
+      </div>
+    </Main>
   );
 }
 
 export default App;
+
+const Main = styled.div`
+  height: 100%;
+`;
 
 const ToolbarStyled = styled(Toolbar)`
   display: flex;
@@ -71,7 +77,7 @@ const ToolbarStyled = styled(Toolbar)`
 `;
 
 const ButtonStyled = styled(Button)`
-  color: var(--nav-text);
+  color: var(--nav-text) !important;
 `;
 
 const RightDiv = styled.div`
@@ -91,7 +97,7 @@ const CenterView = styled.div`
 `;
 
 const CenterText = styled.div`
-  padding: 50px;
+  padding: 5vh;
 `;
 
 const Welcome = styled.h1`
