@@ -91,3 +91,15 @@ button:focus {
     border-right-color: transparent;
   }
 }
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--thirties2);
+  border-radius: 20px;
+}

@@ -117,27 +117,9 @@ const PatternGroup = styled.div`
   position: relative;
 `;
 
-const CenterLogo = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-`;
-
-const LogoBackdrop = styled.div`
-  position: relative;
-  display: flex;
-  background-color: var(--backdrop);
-  margin: 10px 0 0 0;
-  border-radius: 50%;
-  width: 225px;
-  height: 225px;
-  z-index: 1;
-`;
-
 const BottomView = styled.div`
   background-color: var(--bg-bot);
   color: white;
-  height: 450px;
+  height: 250px;
   width: 100%;
 `;
